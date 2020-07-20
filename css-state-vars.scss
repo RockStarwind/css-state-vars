@@ -1,0 +1,171 @@
+/*
+  * css-state-vars
+  * BSD 2-Clause License
+  * Copyright (c) Rock Starwind, 2020
+*/
+
+html * {
+	// Hovered State
+	--is-hovered: initial;
+	--is-hovered-from-parent: initial;
+	--is-hovered-directly-from-parent: initial;
+	--is-hovered-from-sibling: initial;
+	--is-hovered-directly-from-sibling: initial;
+	&:hover {
+		--is-hovered: ;
+		& * { --is-hovered-from-parent: ; }
+		& > * { --is-hovered-directly-from-parent: ; }
+		& + * { --is-hovered-directly-from-sibling: ; }
+		& ~ * { --is-hovered-from-sibling: ; }
+	}
+	
+	// Focused State
+	--is-focused: initial;
+	--is-focused-within: initial;
+	--is-focused-visible: initial;
+	--is-focused-from-parent: initial;
+	--is-focused-directly-from-parent: initial;
+	--is-focused-from-sibling: initial;
+	--is-focused-directly-from-sibling: initial;
+	&:focus {
+		--is-focused: ;
+		& * { --is-focused-from-parent: ; }
+		& > * { --is-focused-directly-from-parent: ; }
+		& ~ * { --is-focused-from-sibling: ; }
+		& + * { --is-focused-directly-from-sibling: ; }
+		&-within { --is-focused-within: ; }
+		&-visible { --is-focused-visible: ; }
+	}
+	
+	// Active
+	--is-active: initial;
+	--is-active-from-parent: initial;
+	--is-active-directly-from-parent: initial;
+	--is-active-from-sibling: initial;
+	--is-active-directly-from-sibling: initial;
+	&:active {
+		--is-active: ;
+		& * { --is-active-from-parent: ; }
+		& > * { --is-active-directly-from-parent: ; }
+		& ~ * { --is-active-from-sibling: ; }
+		& + * { --is-active-directly-from-sibling: ; }
+	}
+	
+	// Any Link, Link, Local Link, Visited Link
+	--is-any-link: initial;
+	--is-link: initial;
+	--is-local-link: initial;
+	--is-visited: initial;
+	&:any-link { --is-any-link: ; }
+	&:link { --is-link: ; }
+	&:local-link { --is-local-link: ; }
+	&:visited { --is-visited: ; }
+	
+	// Target
+	--is-targeted: initial;
+	--is-targeted-from-parent: initial;
+	--is-targeted-directly-from-parent: initial;
+	--is-targeted-from-sibling: initial;
+	--is-targeted-directly-from-sibling: initial;
+	--is-targeted-within: initial;
+	&:target {
+		--is-targeted: ;
+		& * { --is-targeted-from-parent: ; }
+		& > * { --is-targeted-directly-from-parent: ; }
+		& ~ * { --is-targeted-from-sibling: ; }
+		& + * { --is-targeted-directly-from-sibling: ; }
+		&-within { --is-targeted-within: ; }
+	}
+	
+	// Form: Checkbox - Checked and Indeterminate
+	$states: ["checked", "indeterminate"];
+	@for $i from 1 through length($states) {
+		$state: nth($states, $i);
+		--is-#{$state}: initial;
+		--is-#{$state}-from-sibling: initial;
+		--is-#{$state}-directly-from-sibling: initial;
+		&:#{$state} {
+			--is-#{$state}: ;
+			& ~ * { --is-#{$state}-from-sibling: ; }
+			& + * { --is-#{$state}-directly-from-sibling: ; }
+		}
+	}
+	
+	// Form: General
+	$states: ["blank", "disabled", "enabled", "in-range", "out-of-range", "default", "optional", "required", "read-only", "read-write"];
+	@for $i from 1 through length($states) {
+		$state: nth($states, $i);
+		--is-#{$state}: initial;
+		--is-#{$state}-from-sibling: initial;
+		--is-#{$state}-directly-from-sibling: initial;
+		&:#{$state} {
+			--is-#{$state}: ;
+			& ~ * { --is-#{$state}-from-sibling: ; }
+			& + * { --is-#{$state}-directly-from-sibling: ; }
+		}
+	}
+	
+	$states: ["invalid", "valid"];
+	@for $i from 1 through length($states) {
+		$state: nth($states, $i);
+		--is-#{$state}: initial;
+		--is-#{$state}-from-parent: initial;
+		--is-#{$state}-directly-from-parent: initial;
+		--is-#{$state}-from-sibling: initial;
+		--is-#{$state}-directly-from-sibling: initial;
+		&:#{$state} {
+			--is-#{$state}: ;
+			& * { --is-#{$state}-from-parent: ; }
+			& > * { --is-#{$state}-directly-from-parent: ; }
+			& ~ * { --is-#{$state}-from-sibling: ; }
+			& + * { --is-#{$state}-directly-from-sibling: ; }
+		}
+	}
+	
+	--is-showing-placeholder: initial;
+	&:placeholder-shown { --is-showing-placeholder: ; }
+	
+	// Empty, First, Last, Only, Even, and Odd
+	$states: ["empty", "first-child", "last-child", "first-of-type", "last-of-type"];
+	@for $i from 1 through length($states) {
+		$state: nth($states, $i);
+		--is-#{$state}: initial;
+		&:#{$state} { --is-#{$state}: ; }
+	}
+	
+	--is-only-child: initial;
+	--is-only-of-type: initial;
+	&:only-child {
+		--is-first-child: ;
+		--is-last-child: ;
+		--is-only-child: ;
+	}
+	&:only-of-type {
+		--is-first-of-type: ;
+		--is-last-of-type: ;
+		--is-only-of-type: ;
+	}
+	
+	--is-even-child: initial;
+	--is-even-of-type: initial;
+	--is-odd-child: initial;
+	--is-odd-of-type: initial;
+	&:nth-child(even) { --is-even-child: ; }
+	&:nth-of-type(even) { --is-even-of-type: ; }
+	&:nth-child(odd) { --is-odd-child: ; }
+	&:nth-of-type(odd) { --is-odd-of-type: ; }
+	
+	// Print
+	$states: ["first", "left", "right"];
+	@for $i from 1 through length($states) {
+		$state: nth($states, $i);
+		--is-#{$state}-page: initial;
+		&:#{$state} { --is-#{$state}-page: ; }
+	}
+	
+	// Misc
+	--is-defined: initial;
+	--is-fullscreen: initial;
+	&:defined { --is-defined: ; }
+	&:fullscreen { --is-fullscreen: ; }
+}

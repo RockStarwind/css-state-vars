@@ -1,0 +1,372 @@
+/*
+  * css-state-vars
+  * BSD 2-Clause License
+  * Copyright (c) Rock Starwind, 2020
+*/
+ 
+html * {
+  --is-hovered: initial;
+  --is-hovered-from-parent: initial;
+  --is-hovered-directly-from-parent: initial;
+  --is-hovered-from-sibling: initial;
+  --is-hovered-directly-from-sibling: initial;
+  --is-focused: initial;
+  --is-focused-within: initial;
+  --is-focused-visible: initial;
+  --is-focused-from-parent: initial;
+  --is-focused-directly-from-parent: initial;
+  --is-focused-from-sibling: initial;
+  --is-focused-directly-from-sibling: initial;
+  --is-active: initial;
+  --is-active-from-parent: initial;
+  --is-active-directly-from-parent: initial;
+  --is-active-from-sibling: initial;
+  --is-active-directly-from-sibling: initial;
+  --is-any-link: initial;
+  --is-link: initial;
+  --is-local-link: initial;
+  --is-visited: initial;
+  --is-targeted: initial;
+  --is-targeted-from-parent: initial;
+  --is-targeted-directly-from-parent: initial;
+  --is-targeted-from-sibling: initial;
+  --is-targeted-directly-from-sibling: initial;
+  --is-targeted-within: initial;
+  --is-checked: initial;
+  --is-checked-from-sibling: initial;
+  --is-checked-directly-from-sibling: initial;
+  --is-indeterminate: initial;
+  --is-indeterminate-from-sibling: initial;
+  --is-indeterminate-directly-from-sibling: initial;
+  --is-blank: initial;
+  --is-blank-from-sibling: initial;
+  --is-blank-directly-from-sibling: initial;
+  --is-disabled: initial;
+  --is-disabled-from-sibling: initial;
+  --is-disabled-directly-from-sibling: initial;
+  --is-enabled: initial;
+  --is-enabled-from-sibling: initial;
+  --is-enabled-directly-from-sibling: initial;
+  --is-in-range: initial;
+  --is-in-range-from-sibling: initial;
+  --is-in-range-directly-from-sibling: initial;
+  --is-out-of-range: initial;
+  --is-out-of-range-from-sibling: initial;
+  --is-out-of-range-directly-from-sibling: initial;
+  --is-default: initial;
+  --is-default-from-sibling: initial;
+  --is-default-directly-from-sibling: initial;
+  --is-optional: initial;
+  --is-optional-from-sibling: initial;
+  --is-optional-directly-from-sibling: initial;
+  --is-required: initial;
+  --is-required-from-sibling: initial;
+  --is-required-directly-from-sibling: initial;
+  --is-read-only: initial;
+  --is-read-only-from-sibling: initial;
+  --is-read-only-directly-from-sibling: initial;
+  --is-read-write: initial;
+  --is-read-write-from-sibling: initial;
+  --is-read-write-directly-from-sibling: initial;
+  --is-invalid: initial;
+  --is-invalid-from-parent: initial;
+  --is-invalid-directly-from-parent: initial;
+  --is-invalid-from-sibling: initial;
+  --is-invalid-directly-from-sibling: initial;
+  --is-valid: initial;
+  --is-valid-from-parent: initial;
+  --is-valid-directly-from-parent: initial;
+  --is-valid-from-sibling: initial;
+  --is-valid-directly-from-sibling: initial;
+  --is-showing-placeholder: initial;
+  --is-empty: initial;
+  --is-first-child: initial;
+  --is-last-child: initial;
+  --is-first-of-type: initial;
+  --is-last-of-type: initial;
+  --is-only-child: initial;
+  --is-only-of-type: initial;
+  --is-even-child: initial;
+  --is-even-of-type: initial;
+  --is-odd-child: initial;
+  --is-odd-of-type: initial;
+  --is-first-page: initial;
+  --is-left-page: initial;
+  --is-right-page: initial;
+  --is-defined: initial;
+  --is-fullscreen: initial;
+}
+html *:hover {
+  --is-hovered: ;
+}
+html *:hover * {
+  --is-hovered-from-parent: ;
+}
+html *:hover > * {
+  --is-hovered-directly-from-parent: ;
+}
+html *:hover + * {
+  --is-hovered-directly-from-sibling: ;
+}
+html *:hover ~ * {
+  --is-hovered-from-sibling: ;
+}
+html *:focus {
+  --is-focused: ;
+}
+html *:focus * {
+  --is-focused-from-parent: ;
+}
+html *:focus > * {
+  --is-focused-directly-from-parent: ;
+}
+html *:focus ~ * {
+  --is-focused-from-sibling: ;
+}
+html *:focus + * {
+  --is-focused-directly-from-sibling: ;
+}
+html *:focus-within {
+  --is-focused-within: ;
+}
+html *:focus-visible {
+  --is-focused-visible: ;
+}
+html *:active {
+  --is-active: ;
+}
+html *:active * {
+  --is-active-from-parent: ;
+}
+html *:active > * {
+  --is-active-directly-from-parent: ;
+}
+html *:active ~ * {
+  --is-active-from-sibling: ;
+}
+html *:active + * {
+  --is-active-directly-from-sibling: ;
+}
+html *:any-link {
+  --is-any-link: ;
+}
+html *:link {
+  --is-link: ;
+}
+html *:local-link {
+  --is-local-link: ;
+}
+html *:visited {
+  --is-visited: ;
+}
+html *:target {
+  --is-targeted: ;
+}
+html *:target * {
+  --is-targeted-from-parent: ;
+}
+html *:target > * {
+  --is-targeted-directly-from-parent: ;
+}
+html *:target ~ * {
+  --is-targeted-from-sibling: ;
+}
+html *:target + * {
+  --is-targeted-directly-from-sibling: ;
+}
+html *:target-within {
+  --is-targeted-within: ;
+}
+html *:checked {
+  --is-checked: ;
+}
+html *:checked ~ * {
+  --is-checked-from-sibling: ;
+}
+html *:checked + * {
+  --is-checked-directly-from-sibling: ;
+}
+html *:indeterminate {
+  --is-indeterminate: ;
+}
+html *:indeterminate ~ * {
+  --is-indeterminate-from-sibling: ;
+}
+html *:indeterminate + * {
+  --is-indeterminate-directly-from-sibling: ;
+}
+html *:blank {
+  --is-blank: ;
+}
+html *:blank ~ * {
+  --is-blank-from-sibling: ;
+}
+html *:blank + * {
+  --is-blank-directly-from-sibling: ;
+}
+html *:disabled {
+  --is-disabled: ;
+}
+html *:disabled ~ * {
+  --is-disabled-from-sibling: ;
+}
+html *:disabled + * {
+  --is-disabled-directly-from-sibling: ;
+}
+html *:enabled {
+  --is-enabled: ;
+}
+html *:enabled ~ * {
+  --is-enabled-from-sibling: ;
+}
+html *:enabled + * {
+  --is-enabled-directly-from-sibling: ;
+}
+html *:in-range {
+  --is-in-range: ;
+}
+html *:in-range ~ * {
+  --is-in-range-from-sibling: ;
+}
+html *:in-range + * {
+  --is-in-range-directly-from-sibling: ;
+}
+html *:out-of-range {
+  --is-out-of-range: ;
+}
+html *:out-of-range ~ * {
+  --is-out-of-range-from-sibling: ;
+}
+html *:out-of-range + * {
+  --is-out-of-range-directly-from-sibling: ;
+}
+html *:default {
+  --is-default: ;
+}
+html *:default ~ * {
+  --is-default-from-sibling: ;
+}
+html *:default + * {
+  --is-default-directly-from-sibling: ;
+}
+html *:optional {
+  --is-optional: ;
+}
+html *:optional ~ * {
+  --is-optional-from-sibling: ;
+}
+html *:optional + * {
+  --is-optional-directly-from-sibling: ;
+}
+html *:required {
+  --is-required: ;
+}
+html *:required ~ * {
+  --is-required-from-sibling: ;
+}
+html *:required + * {
+  --is-required-directly-from-sibling: ;
+}
+html *:read-only {
+  --is-read-only: ;
+}
+html *:read-only ~ * {
+  --is-read-only-from-sibling: ;
+}
+html *:read-only + * {
+  --is-read-only-directly-from-sibling: ;
+}
+html *:read-write {
+  --is-read-write: ;
+}
+html *:read-write ~ * {
+  --is-read-write-from-sibling: ;
+}
+html *:read-write + * {
+  --is-read-write-directly-from-sibling: ;
+}
+html *:invalid {
+  --is-invalid: ;
+}
+html *:invalid * {
+  --is-invalid-from-parent: ;
+}
+html *:invalid > * {
+  --is-invalid-directly-from-parent: ;
+}
+html *:invalid ~ * {
+  --is-invalid-from-sibling: ;
+}
+html *:invalid + * {
+  --is-invalid-directly-from-sibling: ;
+}
+html *:valid {
+  --is-valid: ;
+}
+html *:valid * {
+  --is-valid-from-parent: ;
+}
+html *:valid > * {
+  --is-valid-directly-from-parent: ;
+}
+html *:valid ~ * {
+  --is-valid-from-sibling: ;
+}
+html *:valid + * {
+  --is-valid-directly-from-sibling: ;
+}
+html *:placeholder-shown {
+  --is-showing-placeholder: ;
+}
+html *:empty {
+  --is-empty: ;
+}
+html *:first-child {
+  --is-first-child: ;
+}
+html *:last-child {
+  --is-last-child: ;
+}
+html *:first-of-type {
+  --is-first-of-type: ;
+}
+html *:last-of-type {
+  --is-last-of-type: ;
+}
+html *:only-child {
+  --is-first-child: ;
+  --is-last-child: ;
+  --is-only-child: ;
+}
+html *:only-of-type {
+  --is-first-of-type: ;
+  --is-last-of-type: ;
+  --is-only-of-type: ;
+}
+html *:nth-child(even) {
+  --is-even-child: ;
+}
+html *:nth-of-type(even) {
+  --is-even-of-type: ;
+}
+html *:nth-child(odd) {
+  --is-odd-child: ;
+}
+html *:nth-of-type(odd) {
+  --is-odd-of-type: ;
+}
+html *:first {
+  --is-first-page: ;
+}
+html *:left {
+  --is-left-page: ;
+}
+html *:right {
+  --is-right-page: ;
+}
+html *:defined {
+  --is-defined: ;
+}
+html *:fullscreen {
+  --is-fullscreen: ;
+}

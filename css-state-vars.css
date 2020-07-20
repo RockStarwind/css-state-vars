@@ -3,7 +3,6 @@
   * BSD 2-Clause License
   * Copyright (c) Rock Starwind, 2020
 */
- 
 html * {
   --is-hovered: initial;
   --is-hovered-from-parent: initial;
@@ -82,9 +81,9 @@ html * {
   --is-empty: initial;
   --is-first-child: initial;
   --is-last-child: initial;
+  --is-only-child: initial;
   --is-first-of-type: initial;
   --is-last-of-type: initial;
-  --is-only-child: initial;
   --is-only-of-type: initial;
   --is-even-child: initial;
   --is-even-of-type: initial;
@@ -327,20 +326,16 @@ html *:first-child {
 html *:last-child {
   --is-last-child: ;
 }
+html *:only-child {
+  --is-only-child: ;
+}
 html *:first-of-type {
   --is-first-of-type: ;
 }
 html *:last-of-type {
   --is-last-of-type: ;
 }
-html *:only-child {
-  --is-first-child: ;
-  --is-last-child: ;
-  --is-only-child: ;
-}
 html *:only-of-type {
-  --is-first-of-type: ;
-  --is-last-of-type: ;
   --is-only-of-type: ;
 }
 html *:nth-child(even) {

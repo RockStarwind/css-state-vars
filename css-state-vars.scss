@@ -126,24 +126,11 @@ html * {
 	&:placeholder-shown { --is-showing-placeholder: ; }
 	
 	// Empty, First, Last, Only, Even, and Odd
-	$states: ["empty", "first-child", "last-child", "first-of-type", "last-of-type"];
+	$states: ["empty", "first-child", "last-child", "only-child", "first-of-type", "last-of-type", "only-of-type"];
 	@for $i from 1 through length($states) {
 		$state: nth($states, $i);
 		--is-#{$state}: initial;
 		&:#{$state} { --is-#{$state}: ; }
-	}
-	
-	--is-only-child: initial;
-	--is-only-of-type: initial;
-	&:only-child {
-		--is-first-child: ;
-		--is-last-child: ;
-		--is-only-child: ;
-	}
-	&:only-of-type {
-		--is-first-of-type: ;
-		--is-last-of-type: ;
-		--is-only-of-type: ;
 	}
 	
 	--is-even-child: initial;

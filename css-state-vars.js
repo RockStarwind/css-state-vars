@@ -159,7 +159,6 @@
 				CSS.registerProperty({
 					name: `--${property}__${state}`,
 					inherits: false,
-					initialValue: `var(--${state})`,
 				});
 			}
 		}

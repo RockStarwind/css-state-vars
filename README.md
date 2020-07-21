@@ -152,3 +152,6 @@ A large number of CSS custom properties are applied to all children of `html`.
 * **Miscellaneous**
 	* `--is-defined`
 	* `--is-fullscreen`
+
+## How to use it
+* 

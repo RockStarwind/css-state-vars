@@ -157,8 +157,8 @@
 			for (let k = 0; k < states.length; k++) {
 				let state = states[k];
 				CSS.registerProperty({
-					name: `--${property}__${state}`,
-					inherits: false,
+					"name": `--${property}__${state}`,
+					"inherits": false,
 				});
 			}
 		}
